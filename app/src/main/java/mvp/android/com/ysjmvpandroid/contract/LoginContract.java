@@ -7,6 +7,10 @@ public interface LoginContract {
         void Login(NetWorkCallback netWorkCallback);
     }
 
+
+
+
+
     interface View extends BaseView {
 
         void succeed(String s);
