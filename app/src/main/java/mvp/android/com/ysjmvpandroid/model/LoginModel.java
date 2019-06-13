@@ -5,7 +5,6 @@ import mvp.android.com.ysjmvpandroid.contract.LoginContract;
 public class LoginModel implements LoginContract.Model {
 
     @Override
-    public int Login() {
-        return 0;
+    public void Login(LoginContract.NetWorkCallback netWorkCallback) {
     }
 }

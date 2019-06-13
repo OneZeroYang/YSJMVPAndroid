@@ -3,6 +3,7 @@ package mvp.android.com.ysjmvpandroid.activity;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 
+import butterknife.ButterKnife;
 import mvp.android.com.mvplibrary.mvpbase.BaseMvpActivity;
 import mvp.android.com.ysjmvpandroid.R;
 import mvp.android.com.ysjmvpandroid.contract.MainContract;
@@ -11,6 +12,11 @@ import mvp.android.com.ysjmvpandroid.presenter.MainPresenter;
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.View{
 
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
+    }
     @Override
     protected int setLayoutId() {
         return R.layout.activity_main;

@@ -8,13 +8,23 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
     private LoginContract.Model model;
 
     public LoginPresenter() {
-        model=new LoginModel();
+        model = new LoginModel();
     }
 
     @Override
     public void Login(String username, String password) {
         mView.showLoading();
-        model.Login();
-        mView.hideLoading();
+        model.Login(new LoginContract.NetWorkCallback() {
+            @Override
+            public void succeed(String s) {
+                mView.succeed(s);
+            }
+
+            @Override
+            public void error(String s) {
+                mView.error(s);
+            }
+        });
+
     }
 }
